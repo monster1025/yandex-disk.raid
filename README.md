@@ -14,6 +14,7 @@ First run:
 > docker run --privileged --name yandex-disk.raid -v /srv/yandex.disk/.encfs/:/root/.encfs/ -ti 50816dfafbfd /sbin/my_init
 
 Params are: -v host-dir:container-dir, also change an id :)
+Next send it to background with CTRL+P & CTRL+Q
 
 Recommended settings in first run:
 * Please choose from one of the following options: x
