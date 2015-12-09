@@ -16,17 +16,17 @@ First run:
 Params are: -v host-dir:container-dir, also change an id :)
 
 Recommended settings in first run:
->Please choose from one of the following options: x
->The following cipher algorithms are available:1
->Selected key size: 256
->filesystem block size: 4096
->The following filename encoding algorithms are available: 1 (Block)
->Enable filename initialization vector chaining? – Yes;
->Enable per-file initialization vectors? – Yes;
->Enable filename to IV header chaining? – Yes;
->Enable block authentication code headers on every block in a file? – No
->Add random bytes to each block header: 8
->Enable file-hole pass-through? – Yes.
+*Please choose from one of the following options: x
+*The following cipher algorithms are available:1
+*Selected key size: 256
+*filesystem block size: 4096
+*The following filename encoding algorithms are available: 1 (Block)
+*Enable filename initialization vector chaining? – Yes;
+*Enable per-file initialization vectors? – Yes;
+*Enable filename to IV header chaining? – Yes;
+*Enable block authentication code headers on every block in a file? – No
+*Add random bytes to each block header: 8
+*Enable file-hole pass-through? – Yes.
 
 !!! Make backup of key and encfs,xml after container start! You will lose data otherwithe.
 
