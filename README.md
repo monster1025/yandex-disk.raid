@@ -12,6 +12,7 @@ Build a container:
 
 First run:
 > docker run --privileged --name yandex-disk.raid -v /srv/yandex.disk/.encfs/:/root/.encfs/ -ti 50816dfafbfd /sbin/my_init
+
 Params are: -v host-dir:container-dir, also change an id :)
 
 Recommended settings in first run:
