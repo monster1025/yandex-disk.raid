@@ -1,7 +1,7 @@
 # yandex-disk.raid - Yandex.Disk Encrypted Raid
-###Docker container to make "RAID" of Yandex.Disks with encryption
+####Docker container to make "RAID" of Yandex.Disks with encryption
 
-###Thanks to DebianZILLA for manual :)
+####Thanks to DebianZILLA for manual :)
 
 Fill secrets file with your yandex.disk accounts data
 login:pass (one pair by one line, login is login, not an email; no comments or other 'trash' allowed).
@@ -12,6 +12,7 @@ Build a container:
 
 First run:
 >docker run --privileged --name yandex-disk.raid -v /srv/yandex.disk/.encfs/:/root/.encfs/ -ti 50816dfafbfd /sbin/my_init
+
 Params are: -v host-dir:container-dir, also change an id :)
 
 Recommended settings in first run:
