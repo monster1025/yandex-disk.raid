@@ -43,6 +43,6 @@ to
 in runit.sh file and you will enter password on each container startup (password is saved in file by default)...
 
 Paths:
-/mnt/yandex.disk.decrypted -- result disk directory
-/mnt/yandex.disk.encrypted -- "big" encrypted container
-/var/webdav/yandex.disk-N -- "small" webdav disks
+* /mnt/yandex.disk.decrypted -- result disk directory
+* /mnt/yandex.disk.encrypted -- "big" encrypted container
+* /var/webdav/yandex.disk-N -- "small" webdav disks
