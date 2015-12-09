@@ -2,8 +2,6 @@
 #no history this time, sorry
 unset HISTFILE 
 
-RANDPASS=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w30 | head -n1)
-
 NUM=1
 while IFS='' read -r line || [[ -n "$line" ]]; do
    IFS=':' read -ra ADDR <<< "$line"
