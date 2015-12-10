@@ -29,7 +29,7 @@ Recommended settings in first run:
 * Add random bytes to each block header: 8
 * Enable file-hole pass-through? – Yes.
 
-!!! Make backup of key and encfs,xml after container start! You will lose data otherwithe.
+> **Note:** !!! Make backup of key and encfs,xml after container start! You will lose data otherwithe.
 
 Container start example:
 > docker start yandex.disk-raid
