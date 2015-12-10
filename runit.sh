@@ -19,4 +19,4 @@ sudo chmod 600 /root/.encfs/key
 
 
 export ENCFS6_CONFIG=/root/.encfs/encfs6.xml
-encfs /mnt/yandex.disk.encrypted /mnt/yandex.disk.decrypted --extpass="cat /root/.encfs/key"
+encfs /mnt/yandex.disk.encrypted /mnt/yandex.disk.decrypted --extpass="cat /root/.encfs/key" --public

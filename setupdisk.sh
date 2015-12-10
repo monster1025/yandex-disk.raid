@@ -2,8 +2,8 @@
 #no history this time, sorry
 unset HISTFILE 
 
-DOMAIN=yandex.ru
-
+DOMAIN=yandex5.ru
+HOST=webdav.yandex.ru
 NUM=1
 while IFS='' read -r line || [[ -n "$line" ]]; do
    IFS=':' read -ra ADDR <<< "$line"
@@ -13,7 +13,7 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
    #echo "$USER-$PASS-$NUM"
 
    sudo echo "/var/webdav/yandex.disk-$NUM $USER@$DOMAIN $PASS" >> /etc/davfs2/secrets
-   sudo echo "https://webdav.yandex.ru /var/webdav/yandex.disk-$NUM davfs gid=$USER@$DOMAIN,uid=$USER@$DOMAIN,noauto 0 0" >> /etc/fstab
+   sudo echo "https://$HOST /var/webdav/yandex.disk-$NUM davfs gid=$USER@$DOMAIN,uid=$USER@$DOMAIN,noauto 0 0" >> /etc/fstab
    sudo mkdir -p /var/webdav/yandex.disk-$NUM
    sudo echo "mount /var/webdav/yandex.disk-$NUM" >> /etc/rc.local
 
@@ -34,7 +34,7 @@ sudo chmod 700 ~/.encfs/
 
 #setup mhddfs (for disk "union")
 sudo mkdir -p /mnt/yandex.disk.encrypted
-sudo echo "mhddfs#${FOLDERS:1} /mnt/yandex.disk.encrypted fuse mlimit=100%,logfile=/var/log/mhddfs.log 0 0" >> /etc/fstab
+sudo echo "mhddfs#${FOLDERS:1} /mnt/yandex.disk.encrypted fuse mlimit=100%,logfile=/var/log/mhddfs.log,allow_other 0 0" >> /etc/fstab
 sudo echo "mount /mnt/yandex.disk.encrypted" >> /etc/rc.local
 
 #setup encfs
