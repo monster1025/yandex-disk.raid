@@ -2,6 +2,8 @@
 #no history this time, sorry
 unset HISTFILE 
 
+DOMAIN=yandex.ru
+
 NUM=1
 while IFS='' read -r line || [[ -n "$line" ]]; do
    IFS=':' read -ra ADDR <<< "$line"
@@ -10,8 +12,8 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
 
    #echo "$USER-$PASS-$NUM"
 
-   sudo echo "/var/webdav/yandex.disk-$NUM $USER@yandex.ru $PASS" >> /etc/davfs2/secrets
-   sudo echo "https://webdav.yandex.ru /var/webdav/yandex.disk-$NUM davfs gid=$USER@yandex.ru,uid=$USER@yandex.ru,noauto 0 0" >> /etc/fstab
+   sudo echo "/var/webdav/yandex.disk-$NUM $USER@$DOMAIN $PASS" >> /etc/davfs2/secrets
+   sudo echo "https://webdav.yandex.ru /var/webdav/yandex.disk-$NUM davfs gid=$USER@$DOMAIN,uid=$USER@$DOMAIN,noauto 0 0" >> /etc/fstab
    sudo mkdir -p /var/webdav/yandex.disk-$NUM
    sudo echo "mount /var/webdav/yandex.disk-$NUM" >> /etc/rc.local
 
